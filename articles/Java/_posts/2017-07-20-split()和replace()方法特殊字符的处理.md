@@ -34,13 +34,13 @@ Exception in thread "main" java.util.regex.PatternSyntaxException: Unexpected in
 原因是：`\` 其实在正则表达式中依然是转移字符，虽然 `"""\"""` 这种写法，在Scala中不需要转义就代表 `\` 字符，但是java.util.regex.Pattern中仍然将其视为转义符，而转义符后面没有跟待转义的字符，然后就报错了。
 所以，转义符`\` 后再加上 `\` ，再进行一次转义才相当于字符 `\` 。
 
-```
+```scala
 val str = """\哈哈哈\"""
 str.replaceAll("""\\""","")
 ```
 或者
 
-```
+```scala
 val str = """\哈哈哈\"""
 str.replaceAll("\\\\","")
 ```
