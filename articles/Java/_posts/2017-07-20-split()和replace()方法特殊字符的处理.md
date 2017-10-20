@@ -1,6 +1,6 @@
 ---
 layout: post
-title: split()和replace()方法特殊字符的处理
+title: 特殊字符处理异常
 tag: Java
 ---
 
@@ -18,7 +18,7 @@ str.replaceAll("""\""","")
 ```
 结果出现了下面的异常：
 
-```
+```console
 Exception in thread "main" java.util.regex.PatternSyntaxException: Unexpected internal error near index 1
 \
  ^
